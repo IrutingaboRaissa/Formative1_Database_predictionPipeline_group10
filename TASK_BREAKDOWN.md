@@ -17,7 +17,7 @@
 ### **TASK 1: Database Implementation** (20% Complete)
 
 #### 1.1 MongoDB Implementation
-**Assigned to:** `TBD`  
+**Assigned to:** `Innocente`  
 **Estimated Time:** 3-4 hours  
 **Deliverables:**
 - [ ] Create MongoDB collections mirroring the SQL tables
@@ -32,7 +32,7 @@
 ---
 
 #### 1.2 ERD Diagram Creation
-**Assigned to:** `TBD`  
+**Assigned to:** `Mitali`  
 **Estimated Time:** 1-2 hours  
 **Deliverables:**
 - [ ] Create professional ERD using draw.io, Lucidchart, or dbdiagram.io
@@ -48,7 +48,7 @@
 ---
 
 #### 1.3 MySQL Database Population
-**Assigned to:** `TBD`  
+**Assigned to:** `Raissa`  
 **Estimated Time:** 2-3 hours  
 **Deliverables:**
 - [ ] Create script to load CSV data into MySQL
@@ -63,7 +63,7 @@
 
 ### **TASK 2: FastAPI CRUD Operations** (10% Complete)
 
-**Assigned to:** `TBD`  
+**Assigned to:** `Alliance`  
 **Estimated Time:** 6-8 hours  
 **Deliverables:**
 - [ ] Implement POST endpoint (Create student record)
@@ -92,7 +92,7 @@ DELETE /students/{id}         - Delete student
 
 ### **TASK 3: Prediction Script** (0% Complete)
 
-**Assigned to:** `TBD`  
+**Assigned to:** `Mitali`  
 **Estimated Time:** 4-5 hours  
 **Deliverables:**
 - [ ] Fetch latest entry from database via API
@@ -113,6 +113,34 @@ DELETE /students/{id}         - Delete student
 3. Load model using `joblib` or `pickle`
 4. Make prediction
 5. POST prediction result back via API
+
+---
+
+## Task Assignment
+
+### **Final Team Assignments:**
+
+| Team Member | Tasks | Total Hours | Files to Create |
+|------------|-------|-------------|-----------------|
+| **Mitali** | 1. ERD Diagram<br>2. Prediction Script | 5-7 hours | `docs/ERD.png`<br>`prediction/fetch_and_predict.py`<br>`prediction/model_loader.py` |
+| **Raissa** | MySQL Database Population | 2-3 hours | `database/populate_mysql.py` |
+| **Alliance** | FastAPI CRUD Operations | 6-8 hours | `app/main.py`<br>`app/api/routes.py`<br>`app/api/crud.py` |
+| **Innocente** | MongoDB Implementation | 3-4 hours | `database/mongodb_setup.py`<br>`database/populate_mongodb.py` |
+
+### **Why This Distribution?**
+
+- **Mitali**: ERD (quick, visual) + Prediction (needs ML knowledge) = Balanced workload
+- **Raissa**: MySQL population (she created the schema, so she knows it best)
+- **Alliance**: CRUD API (biggest task, most critical component)
+- **Innocente**: MongoDB (complete NoSQL implementation with setup & population)
+
+### **Workflow Order:**
+
+1. **Raissa** → Populate MySQL first (so data is ready for API testing)
+2. **Mitali** → Create ERD early (helps everyone visualize structure)
+3. **Alliance** → Build API endpoints (needs MySQL data from Raissa)
+4. **Innocente** → Set up MongoDB (can work in parallel)
+5. **Mitali** → Prediction script (needs Alliance's API to fetch data)
 
 ---
 
