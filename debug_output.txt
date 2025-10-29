@@ -1,0 +1,74 @@
+﻿Total statements found: 9
+
+================================================================================
+
+--------------------------------------------------------------------------------
+Statement #1:
+  Length: 97 characters
+  Starts with '--': True
+  Is empty: False
+  >> SKIP (Comment): -- STUDENT PERFORMANCE DATABASE SCHEMA (DDL ONLY)
+
+
+--------------------------------------------------------------------------------
+Statement #2:
+  Length: 38 characters
+  Starts with '--': False
+  Is empty: False
+  Type: [CREATE DATABASE]
+  Preview: CREATE DATABASE student_performance_db...
+
+--------------------------------------------------------------------------------
+Statement #3:
+  Length: 26 characters
+  Starts with '--': False
+  Is empty: False
+  Type: [USE DATABASE]
+  Preview: USE student_performance_db...
+
+--------------------------------------------------------------------------------
+Statement #4:
+  Length: 521 characters
+  Starts with '--': True
+  Is empty: False
+  >> SKIP (Comment): -- TABLE 1: STUDENTS (Main Entity)
+CREATE TABLE st
+
+--------------------------------------------------------------------------------
+Statement #5:
+  Length: 751 characters
+  Starts with '--': True
+  Is empty: False
+  >> SKIP (Comment): -- TABLE 2: ACADEMIC_RECORDS
+CREATE TABLE academic
+
+--------------------------------------------------------------------------------
+Statement #6:
+  Length: 1277 characters
+  Starts with '--': True
+  Is empty: False
+  >> SKIP (Comment): -- TABLE 3: ENVIRONMENTAL_FACTORS  
+CREATE TABLE e
+
+--------------------------------------------------------------------------------
+Statement #7:
+  Length: 731 characters
+  Starts with '--': True
+  Is empty: False
+  >> SKIP (Comment): -- TABLE 4: PREDICTIONS (ML Results)
+CREATE TABLE 
+
+--------------------------------------------------------------------------------
+Statement #8:
+  Length: 495 characters
+  Starts with '--': True
+  Is empty: False
+  >> SKIP (Comment): -- TABLE 5: AUDIT_LOG (For Trigger)
+CREATE TABLE a
+
+--------------------------------------------------------------------------------
+Statement #9:
+  Length: 0 characters
+  Starts with '--': False
+  Is empty: True
+  >> SKIP (Empty)
