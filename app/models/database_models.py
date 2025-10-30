@@ -33,11 +33,11 @@ class AcademicRecord(Base):
     
     record_id = Column(Integer, primary_key=True, autoincrement=True)
     student_id = Column(Integer, ForeignKey('students.student_id', ondelete='CASCADE'), nullable=False)
-    hours_studied = Column(Integer, CheckConstraint('hours_studied >= 0 AND hours_studied <= 50'))
-    attendance = Column(Integer, CheckConstraint('attendance >= 0 AND attendance <= 100'))
-    previous_scores = Column(Integer, CheckConstraint('previous_scores >= 0 AND previous_scores <= 100'))
-    tutoring_sessions = Column(Integer, default=0, CheckConstraint('tutoring_sessions >= 0'))
-    exam_score = Column(Integer, CheckConstraint('exam_score >= 0 AND exam_score <= 110'))
+    hours_studied = Column(Integer)
+    attendance = Column(Integer)
+    previous_scores = Column(Integer)
+    tutoring_sessions = Column(Integer, default=0)
+    exam_score = Column(Integer)
     created_at = Column(TIMESTAMP, default=datetime.utcnow)
     
     # Relationship
@@ -52,14 +52,14 @@ class EnvironmentalFactors(Base):
     parental_involvement = Column(SQLEnum('Low', 'Medium', 'High', name='level_enum'), default='Medium')
     access_to_resources = Column(SQLEnum('Low', 'Medium', 'High', name='level_enum2'), default='Medium')
     extracurricular_activities = Column(SQLEnum('Yes', 'No', name='yesno_enum2'), default='No')
-    sleep_hours = Column(Integer, CheckConstraint('sleep_hours >= 4 AND sleep_hours <= 12'))
+    sleep_hours = Column(Integer)
     motivation_level = Column(SQLEnum('Low', 'Medium', 'High', name='level_enum3'), default='Medium')
     internet_access = Column(SQLEnum('Yes', 'No', name='yesno_enum3'), default='Yes')
     family_income = Column(SQLEnum('Low', 'Medium', 'High', name='level_enum4'), default='Medium')
     teacher_quality = Column(SQLEnum('Low', 'Medium', 'High', name='level_enum5'), default='Medium')
     school_type = Column(SQLEnum('Public', 'Private', name='school_type_enum'), default='Public')
     peer_influence = Column(SQLEnum('Positive', 'Neutral', 'Negative', name='peer_influence_enum'), default='Neutral')
-    physical_activity = Column(Integer, CheckConstraint('physical_activity >= 0 AND physical_activity <= 10'))
+    physical_activity = Column(Integer)
     parental_education_level = Column(SQLEnum('High School', 'College', 'Postgraduate', name='education_enum'), default='High School')
     created_at = Column(TIMESTAMP, default=datetime.utcnow)
     
@@ -72,9 +72,9 @@ class Prediction(Base):
     
     prediction_id = Column(Integer, primary_key=True, autoincrement=True)
     student_id = Column(Integer, ForeignKey('students.student_id', ondelete='CASCADE'), nullable=False)
-    predicted_score = Column(DECIMAL(5, 2), CheckConstraint('predicted_score >= 0 AND predicted_score <= 110'))
-    actual_score = Column(Integer, CheckConstraint('actual_score >= 0 AND actual_score <= 110'), nullable=True)
-    confidence_score = Column(DECIMAL(5, 4), CheckConstraint('confidence_score >= 0 AND confidence_score <= 1'))
+    predicted_score = Column(DECIMAL(5, 2))
+    actual_score = Column(Integer, nullable=True)
+    confidence_score = Column(DECIMAL(5, 4))
     prediction_date = Column(TIMESTAMP, default=datetime.utcnow)
     
     # Relationship
