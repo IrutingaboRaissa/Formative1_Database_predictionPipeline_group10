@@ -65,9 +65,7 @@ class MySQLDatabaseManager:
     
     def create_database(self):
         """Create the database if it doesn't exist"""
-        print("\n" + "=" * 70)
-        print("CREATING DATABASE")
-        print("=" * 70)
+        print("\nCREATING DATABASE")
         
         try:
             connection = self.get_connection(include_db=False)
@@ -91,9 +89,7 @@ class MySQLDatabaseManager:
         Args:
             schema_file: Path to SQL schema file
         """
-        print("\n" + "=" * 70)
-        print("EXECUTING DATABASE SCHEMA")
-        print("=" * 70)
+        print("\nEXECUTING DATABASE SCHEMA")
         
         if not os.path.exists(schema_file):
             raise FileNotFoundError(f"Schema file not found: {schema_file}")

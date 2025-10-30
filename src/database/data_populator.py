@@ -205,9 +205,7 @@ class MySQLDataPopulator:
         Returns:
             Dictionary with insertion counts
         """
-        print("\n" + "=" * 70)
-        print("MYSQL DATABASE POPULATION (BATCH MODE)")
-        print("=" * 70)
+        print("\nMYSQL DATABASE POPULATION (BATCH MODE)")
         
         self.connect()
         
@@ -227,9 +225,7 @@ class MySQLDataPopulator:
             print("-" * 70)
             env_count = self.insert_environmental_factors_batch(environmental_df, batch_size)
             
-            print("\n" + "=" * 70)
-            print("DATABASE POPULATION COMPLETED!")
-            print("=" * 70)
+            print("\nDATABASE POPULATION COMPLETED!")
             print(f"Total records inserted: {students_count + academic_count + env_count}")
             print(f"  - Students: {students_count}")
             print(f"  - Academic Records: {academic_count}")

@@ -26,9 +26,7 @@ class DataTransformer:
         Returns:
             Tuple of (students_df, academic_df, environmental_df)
         """
-        print("\n" + "=" * 70)
-        print("TRANSFORMING DATASET TO NORMALIZED STRUCTURE")
-        print("=" * 70)
+        print("\nTRANSFORMING DATASET TO NORMALIZED STRUCTURE")
         
         students_data = []
         academic_records_data = []

@@ -118,9 +118,7 @@ class MySQLDataVerifier:
         Returns:
             Verification results dictionary
         """
-        print("\n" + "=" * 70)
-        print("DATABASE VERIFICATION")
-        print("=" * 70)
+        print("\nDATABASE VERIFICATION")
         
         self.connect()
         
@@ -154,9 +152,7 @@ class MySQLDataVerifier:
                 print(f"{row[0]:<5} {row[1]:<8} {row[2]:<13} {row[3]:<7} {row[4]:<7} {row[5]:<7} {row[6]:<8} {row[7]}")
             
             # Verification summary
-            print("\n" + "=" * 70)
-            print("VERIFICATION SUMMARY")
-            print("=" * 70)
+            print("\nVERIFICATION SUMMARY")
             
             total_records = counts['students'] + counts['academic_records'] + counts['environmental_factors']
             print(f"Total Records in Database: {total_records:,}")
