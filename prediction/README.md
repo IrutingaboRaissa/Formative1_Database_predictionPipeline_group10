@@ -8,6 +8,7 @@
 This module implements Task 3 of the assignment: Create a script to fetch data for prediction.
 
 ### Features:
+
 1. ✅ Fetches latest student entry from database via API
 2. ✅ Handles missing data and edge cases
 3. ✅ Loads pre-trained ML model
@@ -30,6 +31,7 @@ prediction/
 ### Prerequisites
 
 1. **API must be running:**
+
    ```bash
    uvicorn app.main:app --reload
    ```
@@ -43,11 +45,13 @@ prediction/
 ### Run Prediction Pipeline
 
 #### Option 1: Predict for latest student
+
 ```bash
 python -m prediction
 ```
 
 #### Option 2: Predict for specific student ID
+
 ```bash
 python -m prediction 123
 ```
@@ -55,11 +59,13 @@ python -m prediction 123
 #### Option 3: Test individual components
 
 **Test data fetching:**
+
 ```bash
 python prediction/fetch_and_predict.py
 ```
 
 **Test model loading:**
+
 ```bash
 python prediction/model_loader.py
 ```
@@ -67,6 +73,7 @@ python prediction/model_loader.py
 ## 🔧 Configuration
 
 Edit `.env` file:
+
 ```env
 API_BASE_URL=http://localhost:8000/api
 ```
@@ -81,6 +88,7 @@ student_data = fetcher.get_latest_student()
 ```
 
 **API Endpoints Used:**
+
 - `GET /api/students/` - Get all students
 - `GET /api/students/{id}/complete/` - Get complete student data
 
@@ -94,6 +102,7 @@ df = preprocessor.encode_categorical_features(df)
 ```
 
 **Features prepared:**
+
 - Demographics: Gender, Learning Disabilities, Distance from Home
 - Academic: Hours Studied, Attendance, Previous Scores, Tutoring Sessions
 - Environmental: 13 factors (sleep, motivation, resources, etc.)
@@ -136,12 +145,14 @@ python prediction/fetch_and_predict.py
 ### From Intro to ML Course
 
 1. **Export your trained model:**
+
    ```python
    import joblib
    joblib.dump(model, 'models/student_performance_model.pkl')
    ```
 
 2. **Or use pickle:**
+
    ```python
    import pickle
    with open('models/student_performance_model.pkl', 'wb') as f:
@@ -156,6 +167,7 @@ python prediction/fetch_and_predict.py
 ### Features Expected by Model
 
 The model should expect these 19 features in order:
+
 1. Gender (encoded)
 2. Learning_Disabilities (encoded)
 3. Distance_from_Home (encoded)
@@ -179,6 +191,7 @@ The model should expect these 19 features in order:
 ## 🐛 Error Handling
 
 The pipeline handles:
+
 - ✅ API connection failures
 - ✅ Missing student data
 - ✅ Model loading errors
@@ -232,6 +245,7 @@ STUDENT PERFORMANCE PREDICTION PIPELINE
 ## 📚 Dependencies
 
 All dependencies are in `requirements.txt`:
+
 ```
 requests==2.31.0
 pandas==2.1.4
