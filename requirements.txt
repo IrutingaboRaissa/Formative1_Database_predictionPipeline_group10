@@ -1,16 +1,18 @@
 # FORMATIVE 1: Database & Prediction Pipeline Dependencies
 
-# Core API Framework
+# Core API Framework (Alliance's CRUD API)
 fastapi==0.104.1
 uvicorn[standard]==0.24.0
+gunicorn==21.2.0  # Added for production deployment
+python-multipart==0.0.6  # Added for form handling
 
-# Database Connections
+# Database Connections (Used by all team members)
 mysql-connector-python==8.2.0
-pymongo==4.6.0
+pymongo==4.6.0  # Required for Innocente's MongoDB implementation
 SQLAlchemy==2.0.23
 
-# Data Science & ML
-pandas==2.1.4
+# Data Science & ML (Required for Mitali's prediction script)
+pandas==2.1.4  # Also used by Raissa for data loading
 numpy==1.25.2
 scikit-learn==1.3.2
 joblib==1.3.2
@@ -18,11 +20,11 @@ joblib==1.3.2
 # Data Validation
 pydantic==2.5.0
 
-# Visualization & Analysis
+# Visualization & Analysis (Used for ERD and data exploration)
 matplotlib==3.8.2
 seaborn==0.13.0
 
-# Dataset Download
+# Dataset Management (Used by Raissa for data population)
 kagglehub==0.2.5
 
 # Environment Management
