@@ -1,0 +1,117 @@
+// Student Performance Database - ERD Diagram
+// Paste this code at: https://dbdiagram.io
+// Then export as PNG for your report
+
+Project StudentPerformanceDB {
+  database_type: 'MySQL'
+  Note: '''
+  Student Performance Prediction System
+  3NF Normalized Relational Database
+  Dataset: Kaggle Student Performance Factors (6,607 records)
+  '''
+}
+
+// TABLE 1: STUDENTS (Main Entity)
+Table students {
+  student_id int [pk, increment, note: 'Primary Key - Auto Increment']
+  gender enum('Male', 'Female') [not null, note: 'Student Gender']
+  learning_disabilities enum('Yes', 'No') [not null, default: 'No', note: 'Has Learning Disabilities']
+  distance_from_home enum('Near', 'Moderate', 'Far') [default: 'Moderate', note: 'Distance from School']
+  created_at timestamp [default: `CURRENT_TIMESTAMP`]
+  updated_at timestamp [default: `CURRENT_TIMESTAMP`]
+  
+  indexes {
+    gender
+    learning_disabilities
+  }
+  
+  Note: 'Student demographic information - 6,607 records'
+}
+
+// TABLE 2: ACADEMIC_RECORDS
+Table academic_records {
+  record_id int [pk, increment, note: 'Primary Key - Auto Increment']
+  student_id int [not null, ref: > students.student_id, note: 'Foreign Key to Students']
+  hours_studied int [note: 'Hours studied per week (0-50)']
+  attendance int [note: 'Attendance percentage (0-100)']
+  previous_scores int [note: 'Previous exam scores (0-100)']
+  tutoring_sessions int [default: 0, note: 'Number of tutoring sessions']
+  exam_score int [note: 'Current exam score (0-110)']
+  created_at timestamp [default: `CURRENT_TIMESTAMP`]
+  
+  indexes {
+    student_id
+    exam_score
+    created_at
+  }
+  
+  Note: 'Academic performance data for each student'
+}
+
+// TABLE 3: ENVIRONMENTAL_FACTORS
+Table environmental_factors {
+  env_id int [pk, increment, note: 'Primary Key - Auto Increment']
+  student_id int [not null, ref: > students.student_id, note: 'Foreign Key to Students']
+  parental_involvement enum('Low', 'Medium', 'High') [default: 'Medium']
+  access_to_resources enum('Low', 'Medium', 'High') [default: 'Medium']
+  extracurricular_activities enum('Yes', 'No') [default: 'No']
+  sleep_hours int [note: 'Hours of sleep per night (4-12)']
+  motivation_level enum('Low', 'Medium', 'High') [default: 'Medium']
+  internet_access enum('Yes', 'No') [default: 'Yes']
+  family_income enum('Low', 'Medium', 'High') [default: 'Medium']
+  teacher_quality enum('Low', 'Medium', 'High') [default: 'Medium']
+  school_type enum('Public', 'Private') [default: 'Public']
+  peer_influence enum('Positive', 'Neutral', 'Negative') [default: 'Neutral']
+  physical_activity int [note: 'Hours of physical activity per week (0-10)']
+  parental_education_level enum('High School', 'College', 'Postgraduate') [default: 'High School']
+  created_at timestamp [default: `CURRENT_TIMESTAMP`]
+  
+  indexes {
+    student_id
+    parental_involvement
+    school_type
+  }
+  
+  Note: 'Environmental and socio-economic factors affecting student performance'
+}
+
+// TABLE 4: PREDICTIONS (ML Results)
+Table predictions {
+  prediction_id int [pk, increment, note: 'Primary Key - Auto Increment']
+  student_id int [not null, ref: > students.student_id, note: 'Foreign Key to Students']
+  predicted_score decimal(5,2) [note: 'ML predicted exam score (0-110)']
+  actual_score int [null, note: 'Actual exam score for comparison']
+  confidence_score decimal(5,4) [note: 'Model confidence level (0.0-1.0)']
+  prediction_date timestamp [default: `CURRENT_TIMESTAMP`]
+  
+  indexes {
+    student_id
+    prediction_date
+  }
+  
+  Note: 'Machine Learning prediction results - populated by ML pipeline'
+}
+
+// TABLE 5: AUDIT_LOG (Trigger Support)
+Table audit_log {
+  log_id int [pk, increment, note: 'Primary Key - Auto Increment']
+  table_name varchar(50) [not null, note: 'Name of table being audited']
+  operation enum('INSERT', 'UPDATE', 'DELETE') [not null, note: 'Type of operation']
+  record_id int [not null, note: 'ID of affected record']
+  old_values json [null, note: 'Previous values (JSON format)']
+  new_values json [null, note: 'New values (JSON format)']
+  changed_by varchar(100) [default: 'system', note: 'User who made the change']
+  change_timestamp timestamp [default: `CURRENT_TIMESTAMP`]
+  
+  indexes {
+    (table_name, operation)
+    change_timestamp
+  }
+  
+  Note: 'Audit trail for data changes - populated by triggers'
+}
+
+// RELATIONSHIPS
+Ref: academic_records.student_id > students.student_id [delete: cascade, note: 'One student has many academic records']
+Ref: environmental_factors.student_id > students.student_id [delete: cascade, note: 'One student has many environmental factors']
+Ref: predictions.student_id > students.student_id [delete: cascade, note: 'One student has many predictions']
