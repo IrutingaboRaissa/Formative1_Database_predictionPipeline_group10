@@ -79,3 +79,6 @@ class Prediction(Base):
     
     # Relationship
     student = relationship("Student", back_populates="predictions")
+
+
+

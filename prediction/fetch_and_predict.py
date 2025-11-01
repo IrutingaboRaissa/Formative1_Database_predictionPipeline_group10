@@ -189,3 +189,6 @@ if __name__ == "__main__":
         print("   See: prediction/model_loader.py")
     else:
         print("\n❌ Failed to fetch student data")
+
+
+

@@ -6,9 +6,7 @@ import pandas as pd
 import kagglehub
 import sys
 
-# Add parent directory to path for imports
-parent_dir = os.path.dirname(os.path.dirname(__file__))
-sys.path.insert(0, os.path.join(parent_dir, 'src'))
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.dirname(__file__)), 'src'))
 
 from database.mysql_manager import MySQLDatabaseManager
 from database.data_populator import MySQLDataPopulator
@@ -120,3 +118,6 @@ def run_complete_setup():
         import traceback
         traceback.print_exc()
         return 1
+
+
+

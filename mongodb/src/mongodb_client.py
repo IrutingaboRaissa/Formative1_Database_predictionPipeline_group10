@@ -10,3 +10,6 @@ def get_db():
 def get_collection():
     db = get_db()
     return db[COLLECTION_NAME]
+
+
+

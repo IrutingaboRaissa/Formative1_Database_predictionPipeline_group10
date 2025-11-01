@@ -353,7 +353,7 @@ class StoredProcedureTester:
         print("=" * 70)
         
         for test_name, passed in results.items():
-            status = "✓ PASS" if passed else "✗ FAIL"
+            status = "PASS" if passed else "FAIL"
             print(f"{status}: {test_name}")
         
         all_passed = all(results.values())
@@ -372,3 +372,6 @@ if __name__ == "__main__":
     success = tester.run_all_tests()
     
     exit(0 if success else 1)
+
+
+
