@@ -40,7 +40,7 @@ def main():
         return
 
     res = col.insert_many(records)
-    print(f"✅ Inserted {len(res.inserted_ids)} documents into '{col.name}'")
+    print(f"Inserted {len(res.inserted_ids)} documents into '{col.name}'")
 
 if __name__ == "__main__":
     main()

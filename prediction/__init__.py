@@ -7,9 +7,6 @@ This is the main script that:
 3. Loads ML model
 4. Makes prediction
 5. Logs result back to database
-
-Author: Mitali
-Date: October 30, 2025
 """
 
 from fetch_and_predict import StudentDataFetcher, PredictionLogger, test_api_connection
@@ -83,12 +80,10 @@ def run_prediction_pipeline(student_id: int = None):
     )
     
     if success:
-        print("\n" + "=" * 70)
-        print("✅ PREDICTION PIPELINE COMPLETED SUCCESSFULLY")
-        print("=" * 70)
+        print("\nPREDICTION PIPELINE COMPLETED SUCCESSFULLY")
         return True
     else:
-        print("\n❌ Failed to log prediction")
+        print("\nFailed to log prediction")
         return False
 
 

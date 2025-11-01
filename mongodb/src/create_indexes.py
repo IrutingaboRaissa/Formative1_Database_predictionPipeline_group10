@@ -12,7 +12,7 @@ def main():
     # Example compound index if you often filter by gender + course (if exists)
     # col.create_index([("gender", ASCENDING), ("course", ASCENDING)], name="idx_gender_course")
 
-    print("✅ Indexes created.")
+    print("Indexes created.")
 
 if __name__ == "__main__":
     main()

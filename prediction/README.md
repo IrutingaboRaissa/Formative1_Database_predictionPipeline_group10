@@ -1,22 +1,21 @@
 # Prediction Module
 
-**Author:** Mitali  
 **Purpose:** Fetch student data from API and make ML predictions
 
-## 📋 Overview
+## Overview
 
 This module implements Task 3 of the assignment: Create a script to fetch data for prediction.
 
 ### Features:
 
-1. ✅ Fetches latest student entry from database via API
-2. ✅ Handles missing data and edge cases
-3. ✅ Loads pre-trained ML model
-4. ✅ Preprocesses data for prediction
-5. ✅ Makes predictions using the model
-6. ✅ Logs prediction results
+1. Fetches latest student entry from database via API
+2. Handles missing data and edge cases
+3. Loads pre-trained ML model
+4. Preprocesses data for prediction
+5. Makes predictions using the model
+6. Logs prediction results
 
-## 📁 Files
+## Files
 
 ```
 prediction/
@@ -26,7 +25,7 @@ prediction/
 └── README.md               # This file
 ```
 
-## 🚀 Usage
+## Usage
 
 ### Prerequisites
 
@@ -78,7 +77,7 @@ Edit `.env` file:
 API_BASE_URL=http://localhost:8000/api
 ```
 
-## 📊 How It Works
+## How It Works
 
 ### 1. Data Fetching (`fetch_and_predict.py`)
 

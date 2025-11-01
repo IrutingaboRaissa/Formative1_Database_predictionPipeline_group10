@@ -10,7 +10,7 @@ def main():
     df = pd.DataFrame(docs)
     out_path = "sample_export.csv"
     df.to_csv(out_path, index=False)
-    print(f"✅ Wrote {len(df)} rows to {out_path}")
+    print(f"Wrote {len(df)} rows to {out_path}")
 
 if __name__ == "__main__":
     main()

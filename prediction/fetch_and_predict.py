@@ -7,9 +7,6 @@ This script:
 3. Loads the trained model
 4. Makes a prediction
 5. Logs the prediction back to the database via API
-
-Author: Mitali
-Date: October 30, 2025
 """
 
 import requests
@@ -136,7 +133,7 @@ class PredictionLogger:
             
             # TODO: Update this endpoint when predictions endpoint is added to API
             # For now, we'll print the prediction
-            print(f"\n📊 Prediction Result:")
+            print(f"\nPrediction Result:")
             print(f"   Student ID: {student_id}")
             print(f"   Predicted Score: {predicted_score:.2f}")
             print(f"   Confidence: {confidence_score:.4f}")

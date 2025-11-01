@@ -3,9 +3,6 @@ Train ML Model for Student Performance Prediction
 
 This script trains a machine learning model using the student performance dataset
 and saves it for use in the prediction pipeline.
-
-Author: Mitali
-Date: October 30, 2025
 """
 
 import pandas as pd
@@ -23,7 +20,7 @@ def load_and_prepare_data():
     Load the student performance dataset
     For now, we'll create sample data. Replace this with actual CSV loading.
     """
-    print("📊 Loading dataset...")
+    print("Loading dataset...")
     
     # TODO: Replace with actual dataset loading
     # df = pd.read_csv('Student_performance_data.csv')
@@ -118,7 +115,7 @@ def evaluate_model(model, X_test, y_test):
     mae = mean_absolute_error(y_test, y_pred)
     r2 = r2_score(y_test, y_pred)
     
-    print(f"\n📊 Model Performance:")
+    print(f"\nModel Performance:")
     print(f"   R² Score: {r2:.4f}")
     print(f"   RMSE: {rmse:.2f}")
     print(f"   MAE: {mae:.2f}")
@@ -189,9 +186,7 @@ def main():
     for idx, row in feature_importance.head(10).iterrows():
         print(f"   {row['feature']}: {row['importance']:.4f}")
     
-    print("\n" + "=" * 70)
-    print("✅ MODEL TRAINING COMPLETED SUCCESSFULLY!")
-    print("=" * 70)
+    print("\nMODEL TRAINING COMPLETED SUCCESSFULLY!")
     print(f"\nModel saved to: models/student_performance_model.pkl")
     print(f"You can now use this model in the prediction pipeline!")
 

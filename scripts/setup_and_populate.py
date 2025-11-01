@@ -1,6 +1,5 @@
 """
 Complete MySQL Database Setup and Population
-Author: Raissa Irutingabo
 """
 import os
 import pandas as pd
@@ -86,7 +85,6 @@ def verify_database(db_manager, expected_count):
 def run_complete_setup():
     """Main execution flow"""
     print("\nMYSQL DATABASE SETUP - STUDENT PERFORMANCE PREDICTION SYSTEM")
-    print("Author: Raissa Irutingabo")
     
     try:
         df = load_dataset()

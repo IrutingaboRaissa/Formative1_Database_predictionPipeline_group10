@@ -6,9 +6,6 @@ This module handles:
 2. Preprocessing student data for prediction
 3. Making predictions
 4. Handling missing data
-
-Author: Mitali
-Date: October 30, 2025
 """
 
 import joblib

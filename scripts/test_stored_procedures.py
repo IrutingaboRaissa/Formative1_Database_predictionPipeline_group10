@@ -1,8 +1,3 @@
-"""
-MySQL Stored Procedures Testing Script
-Created by: Raissa
-Purpose: Test and demonstrate stored procedures functionality
-"""
 
 import os
 import mysql.connector
@@ -91,7 +86,7 @@ class StoredProcedureTester:
                 # Interpret the results
                 if results[0]:
                     row = results[0]
-                    print("\n📊 Summary Analysis:")
+                    print("\nSummary Analysis:")
                     print(f"  Student ID: {row[0]}")
                     print(f"  Gender: {row[1]}")
                     print(f"  Learning Disabilities: {row[2]}")
