@@ -64,18 +64,6 @@ python make_predictions.py 10
 
 This runs predictions for 10 students and saves results to the database.
 
-## Project Structure
-
-```
-├── src/              - database classes
-├── app/              - FastAPI code
-├── mongodb/          - MongoDB stuff
-├── prediction/       - ML pipeline
-├── scripts/          - setup and test scripts
-├── models/           - trained model file
-└── schema_ddl_only.sql - database schema
-```
-
 ## Model Performance
 
 - Accuracy: 76% (R² = 0.7630)
@@ -105,6 +93,4 @@ Run train_model.py first
 - MySQL 8.0+
 - MongoDB 6.0+ (optional)
 
----
 
-Made for Database Systems course - Fall 2024
