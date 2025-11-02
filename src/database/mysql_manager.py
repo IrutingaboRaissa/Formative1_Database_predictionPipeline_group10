@@ -221,3 +221,6 @@ class MySQLDatabaseManager:
         except Error as e:
             print(f"✗ Connection test failed: {e}")
             return False
+
+
+

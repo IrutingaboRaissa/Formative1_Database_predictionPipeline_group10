@@ -7,3 +7,6 @@ from scripts.setup_and_populate import run_complete_setup
 
 if __name__ == "__main__":
     sys.exit(run_complete_setup())
+
+
+

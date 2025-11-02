@@ -100,3 +100,5 @@ def create_complete_student(student: CompleteStudentCreate, db: Session = Depend
 def read_complete_student(student_id: int, db: Session = Depends(get_mysql_db)):
     """Get complete student information including academic and environmental data"""
     return crud.get_complete_student(db, student_id)
+
+

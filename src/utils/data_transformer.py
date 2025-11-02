@@ -95,3 +95,6 @@ class DataTransformer:
         print(self.academic_df.head(3))
         print("\nEnvironmental Factors DataFrame:")
         print(self.environmental_df[['student_id', 'parental_involvement', 'school_type', 'motivation_level']].head(3))
+
+
+
